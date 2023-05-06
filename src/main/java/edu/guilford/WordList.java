@@ -1,5 +1,8 @@
 package edu.guilford;
+
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class WordList implements Comparable<WordList> {
@@ -11,6 +14,28 @@ public class WordList implements Comparable<WordList> {
         this.word = word;
         this.count = count;
     }
+
+    public String getWord() {
+        return word;
+    }
+
+    File file = new File("inputfile.txt");
+    FileReader fr= new FileReader(file);
+    public FileReader getFr() {
+        return fr;
+    }
+
+    public void setFr(FileReader fr) {
+        this.fr = fr;
+    }
+
+    BufferedReader br = new BufferedReader( fr)
+
+    reader = new BufferedReader(new InputStreamReader(
+    getClass().getClassLoader().getResourceAsStream(
+        "/Users/Arman/OneDrive/Documents/GitHub/A8/assignment8/src/main/resources/inputfile.txt")));
+
+    
 
     public static void main(String[] args) throws FileNotFoundException {
         WordList wordList = new WordList("", 0);
@@ -59,6 +84,7 @@ public class WordList implements Comparable<WordList> {
             e.printStackTrace();
         }
     }
+
 
     public void analyzeWordList(String inputFile, String outputFile) throws FileNotFoundException {
     }
